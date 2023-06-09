@@ -175,6 +175,7 @@ pipeline {
                 init() 
             }
         }
+        /*    
         stage('closeBatch1')
         {
             steps
@@ -182,6 +183,7 @@ pipeline {
                 closeBatch('../AutomationTesting/validation/closeBatch1.txt', 1)
             }
         }
+        */
         /*    
         stage('sales')
         {
