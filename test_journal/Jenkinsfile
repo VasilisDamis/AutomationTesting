@@ -187,11 +187,11 @@ pipeline {
         {
             steps
             {
-                sale(3)
+                sale(1)
             }
             
         }
-            
+        /*
         stage('preauth_preauthComp')
         {
             steps
@@ -216,7 +216,7 @@ pipeline {
                 preauth_void(3)
             }
         }
-        
+        */
        stage('journal')
         {
             steps
@@ -225,7 +225,7 @@ pipeline {
             }
             
         }
-
+        /*
         stage('closeBatch2')
         {
             steps
@@ -233,5 +233,6 @@ pipeline {
                 closeBatch('../AutomationTesting/validation/closeBatch.txt', 2)
             }
         }
+        */
     }
 }
