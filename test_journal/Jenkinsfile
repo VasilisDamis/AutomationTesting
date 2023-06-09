@@ -61,9 +61,9 @@ def preauth_preauthComp(size)
                 //bat str 
                 
                 log = ' -lp preauthCompLog' + i.toString() + '.LOG'
-                //data = ' -in preauthData' + i.toString()+ '.txt'
-                //outData = ' -out CompData' + i.toString()+ '.txt'
-                str = 'python.exe ../AutomationTesting/Main.py ' + connType + ip +' -vp ../AutomationTesting/validation/preauthCompletion0.txt ' + dir + log + comPort + baudRate + cur
+                data = ' -in preauthData' + i.toString()+ '.txt'
+                outData = ' -out CompData' + i.toString()+ '.txt'
+                str = 'python.exe ../AutomationTesting/Main.py ' + connType + ip +' -vp ../AutomationTesting/validation/preauthCompletion0.txt ' + dir + log + comPort + baudRate + cur + logsPort + data + outData
                 bat str 
             }
         }
