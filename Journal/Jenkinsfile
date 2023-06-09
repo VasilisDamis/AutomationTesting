@@ -6,6 +6,14 @@ logsPort = ' -logsPort COM17'
 baudRate = ' -baud 9600'
 cur = ' -cur 975'
 
+def init()
+{
+        script
+        {
+                bat 'python.exe ../AutomationTesting/SetupTest.py '
+        }
+}
+
 def journal()
 {
     script
