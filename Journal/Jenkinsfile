@@ -1,0 +1,47 @@
+connType = '-t 2'
+dir = ' -dir ../AutomationTesting/Tests/journal'
+globalVal = ' -gv ../AutomationTesting/validation/globalValidations.txt'
+comPort = ' -serialPort COM18'
+logsPort = ' -logsPort COM17'
+baudRate = ' -baud 9600'
+cur = ' -cur 975'
+
+def journal()
+{
+    script
+    {
+        catchError(stageResult: 'FAILURE')
+        {
+            i = 0
+            log = ' -lp journalLog' + i.toString() + '.LOG'
+            globalVal = ' -gv ../AutomationTesting/validation/globalValidations.txt'
+            str = 'python.exe ../AutomationTesting/Main.py ' + connType + ' -vp ../AutomationTesting/validation/journal.txt ' + dir + log + comPort + baudRate + globalVal + logsPort
+            bat str
+        }
+    }
+}
+
+pipeline {
+    agent any
+
+    stages 
+    {
+
+        stage('Init')
+        {
+            steps
+            {
+                init() 
+            }
+        }
+    
+       stage('journal')
+        {
+            steps
+            {
+                journal()
+            }
+            
+        }
+    }
+}
